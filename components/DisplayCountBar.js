@@ -101,6 +101,7 @@ class DisplayCountBar extends React.Component {
 export default DisplayCountBar;
 
 const styles = StyleSheet.create({
+  container: { backgroundColor: "#ad72a3" },
   displayCountBar: {
     margin: 10,
     display: "flex",
@@ -121,7 +122,7 @@ const styles = StyleSheet.create({
   numberInputBox: {
     height: 25,
     width: 40,
-    borderBottomColor: "gray",
+    borderBottomColor: "#485c7c",
     borderBottomWidth: 2
   }
 });

@@ -5,7 +5,8 @@ import DisplayCountBar from "../components/DisplayCountBar";
 
 export default class KittensList extends React.Component {
   static navigationOptions = {
-    title: "Kittens Generator 3000"
+    title: "Kittens Generator 3000",
+    backgroundColor: "#42303f"
   };
 
   constructor(props) {
@@ -76,6 +77,7 @@ export default class KittensList extends React.Component {
       <View>
         <ScrollView>
           <DisplayCountBar changeDisplayCount={this.changeDisplayCount} />
+          <View style={{ height: 3, backgroundColor: "#485c7c" }} />
           <FlatList
             data={this.state.card}
             keyExtractor={this.keyExtractor}

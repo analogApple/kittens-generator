@@ -11,8 +11,11 @@ export default class KittenView extends React.Component {
     const name = navigation.getParam("name");
     return (
       <View style={styles.container}>
+        <View style={{ height: 10 }} />
         <ScrollView>
-          <Image style={{ width: 350, height: 350 }} source={{ uri: uri }} />
+          <View style={styles.container}>
+            <Image style={{ width: 350, height: 350 }} source={{ uri: uri }} />
+          </View>
           <Text style={styles.name}>{name}</Text>
           <Text style={styles.description}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
@@ -33,16 +36,18 @@ export default class KittenView extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#e59ed9",
     alignItems: "center",
     justifyContent: "center"
   },
   name: {
+    backgroundColor: "#e59ed9",
     fontSize: 30,
     margin: 3,
     fontWeight: "bold"
   },
   description: {
+    backgroundColor: "#e59ed9",
     fontSize: 15,
     margin: 3
   }

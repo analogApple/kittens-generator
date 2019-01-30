@@ -9,7 +9,7 @@ class Card extends React.Component {
     return (
       <View style={styles.container}>
         <Image
-          style={{ width: 200, height: 200 }}
+          style={{ width: 200, height: 200, marginTop: 20 }}
           source={{ uri: this.props.uri }}
         />
         <Text
@@ -23,6 +23,14 @@ class Card extends React.Component {
         >
           {this.props.name} {this.props.count}
         </Text>
+        <View
+          style={{
+            height: 3,
+            width: 300,
+            backgroundColor: "#485c7c",
+            margin: 3
+          }}
+        />
       </View>
     );
   }
@@ -32,7 +40,7 @@ export default withNavigation(Card);
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#e59ed9",
     alignItems: "center",
     justifyContent: "center"
   },
