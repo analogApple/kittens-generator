@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, View, TextInput, Alert } from "react-native";
+import { Text, View, TextInput, Alert } from "react-native";
+import Styles from "../styles/Styles";
 
 class DisplayCountBar extends React.Component {
   constructor(props) {
@@ -47,41 +48,41 @@ class DisplayCountBar extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.displayCountBar}>
-          <Text style={styles.regularText}>Want to see </Text>
+      <View style={Styles.countBarContainer}>
+        <View style={Styles.countBar}>
+          <Text style={Styles.countBarRegularText}>Want to see </Text>
           <Text
-            style={styles.displayCountNumbers}
+            style={Styles.countBarDisplayCountNumbers}
             onPress={() => {
               this.props.changeDisplayCount(30);
             }}
           >
             30
           </Text>
-          <Text style={styles.regularText}>, </Text>
+          <Text style={Styles.countBarRegularText}>, </Text>
           <Text
-            style={styles.displayCountNumbers}
+            style={Styles.countBarDisplayCountNumbers}
             onPress={() => {
               this.props.changeDisplayCount(50);
             }}
           >
             50
           </Text>
-          <Text style={styles.regularText}> maybe </Text>
+          <Text style={Styles.countBarRegularText}> maybe </Text>
           <Text
-            style={styles.displayCountNumbers}
+            style={Styles.countBarDisplayCountNumbers}
             onPress={() => {
               this.props.changeDisplayCount(100);
             }}
           >
             100
           </Text>
-          <Text style={styles.regularText}> kittens?</Text>
+          <Text style={Styles.countBarRegularText}> kittens?</Text>
         </View>
-        <View style={styles.displayCountBar}>
-          <Text style={styles.regularText}>You tell me </Text>
+        <View style={Styles.countBar}>
+          <Text style={Styles.countBarRegularText}>You tell me </Text>
           <TextInput
-            style={styles.numberInputBox}
+            style={Styles.countBarNumberInputBox}
             keyboardType="numeric"
             value={this.state.count}
             onChangeText={text => this.onChanged(text)}
@@ -93,40 +94,10 @@ class DisplayCountBar extends React.Component {
             }}
           />
         </View>
+        <View style={Styles.longTab} />
       </View>
     );
   }
 }
 
 export default DisplayCountBar;
-
-const styles = StyleSheet.create({
-  container: { backgroundColor: "#ad72a3" },
-  displayCountBar: {
-    margin: 10,
-    display: "flex",
-    flexWrap: "wrap",
-    alignItems: "flex-start",
-    flexDirection: "row"
-  },
-  displayCountNumbers: {
-    height: 25,
-    fontSize: 20,
-    textDecorationLine: "underline",
-    fontWeight: "bold",
-    textAlignVertical: "bottom"
-  },
-  regularText: {
-    height: 25,
-    textAlignVertical: "bottom"
-  },
-  numberInputBox: {
-    height: 25,
-    width: 40,
-    borderBottomColor: "#485c7c",
-    borderBottomWidth: 2,
-    fontSize: 20,
-    fontWeight: "bold",
-    textAlignVertical: "bottom"
-  }
-});

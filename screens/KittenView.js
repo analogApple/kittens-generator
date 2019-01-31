@@ -1,28 +1,30 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
-import CacheImage from "../components/CacheImage";
 import InternetStatus from "../components/InternetStatusListener";
 export default class KittenView extends React.Component {
   static navigationOptions = {
-    title: "Kitten description"
+    title: "Kitten description",
+    headerStyle: {
+      backgroundColor: "grey"
+    }
   };
   render() {
     const { navigation } = this.props;
     const uri = navigation.getParam("uri");
     const name = navigation.getParam("name");
     return (
-      <View style={styles.container}>
+      <View style={Styles.container}>
         <View style={{ height: 10 }} />
         <ScrollView>
           <InternetStatus />
-          <View style={styles.container}>
-            <CacheImage
+          <View style={Styles.container}>
+            <Image
               style={{ width: 350, height: 350, marginTop: 20 }}
-              uri={uri}
+              source={{ uri: uri }}
             />
           </View>
-          <Text style={styles.name}>{name}</Text>
-          <Text style={styles.description}>
+          <Text style={Styles.nameView}>{name}</Text>
+          <Text style={Styles.descriptionView}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
             hendrerit nunc tellus, suscipit venenatis tortor volutpat ac. Sed
             vel ipsum eget metus scelerisque feugiat. Aliquam quam orci,
@@ -37,23 +39,3 @@ export default class KittenView extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#e59ed9",
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  name: {
-    backgroundColor: "#e59ed9",
-    fontSize: 30,
-    margin: 3,
-    fontWeight: "bold"
-  },
-  description: {
-    backgroundColor: "#e59ed9",
-    fontSize: 15,
-    margin: 3
-  }
-});

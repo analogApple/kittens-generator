@@ -1,6 +1,5 @@
-import { NetInfo } from "react-native";
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet, NetInfo } from "react-native";
 
 export default class InternetStatus extends React.Component {
   constructor(props) {
@@ -25,7 +24,6 @@ export default class InternetStatus extends React.Component {
       state.isConnected = true;
       this.setState(state);
     } else {
-      alert("Oops!! No Internet Connection Available");
       state.isConnected = false;
       this.setState(state);
     }
@@ -34,9 +32,16 @@ export default class InternetStatus extends React.Component {
     return this.state.isConnected ? (
       <View />
     ) : (
-      <Text style={{ backgroundColor: "red", height: 120 }}>
-        !!!!!!!!!!!!!!!!!No internet
+      <Text style={styles.noInternetConnectionBar}>
+        Oops!! No Internet Connection Available
       </Text>
     );
   }
 }
+const styles = StyleSheet.create({
+  noInternetConnectionBar: {
+    height: 120,
+    backgroundColor: "#ff7b00",
+    fontSize: 30
+  }
+});
