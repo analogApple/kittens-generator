@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, ScrollView, FlatList } from "react-native";
 import Card from "../components/Card";
 import DisplayCountBar from "../components/DisplayCountBar";
+import InternetStatus from "../components/InternetStatusListener";
 
 export default class KittensList extends React.Component {
   static navigationOptions = {
@@ -76,6 +77,7 @@ export default class KittensList extends React.Component {
     return (
       <View>
         <ScrollView>
+          <InternetStatus />
           <DisplayCountBar changeDisplayCount={this.changeDisplayCount} />
           <View style={{ height: 3, backgroundColor: "#485c7c" }} />
           <FlatList

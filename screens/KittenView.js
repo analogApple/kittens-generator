@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
-
+import CacheImage from "../components/CacheImage";
+import InternetStatus from "../components/InternetStatusListener";
 export default class KittenView extends React.Component {
   static navigationOptions = {
     title: "Kitten description"
@@ -13,8 +14,12 @@ export default class KittenView extends React.Component {
       <View style={styles.container}>
         <View style={{ height: 10 }} />
         <ScrollView>
+          <InternetStatus />
           <View style={styles.container}>
-            <Image style={{ width: 350, height: 350 }} source={{ uri: uri }} />
+            <CacheImage
+              style={{ width: 350, height: 350, marginTop: 20 }}
+              uri={uri}
+            />
           </View>
           <Text style={styles.name}>{name}</Text>
           <Text style={styles.description}>

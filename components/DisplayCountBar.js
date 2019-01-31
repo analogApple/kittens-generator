@@ -79,7 +79,7 @@ class DisplayCountBar extends React.Component {
           <Text style={styles.regularText}> kittens?</Text>
         </View>
         <View style={styles.displayCountBar}>
-          <Text style={styles.regularText}>Tell me yourself </Text>
+          <Text style={styles.regularText}>You tell me </Text>
           <TextInput
             style={styles.numberInputBox}
             keyboardType="numeric"
@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
   displayCountNumbers: {
     height: 25,
     fontSize: 20,
+    textDecorationLine: "underline",
     fontWeight: "bold",
     textAlignVertical: "bottom"
   },
@@ -123,6 +124,9 @@ const styles = StyleSheet.create({
     height: 25,
     width: 40,
     borderBottomColor: "#485c7c",
-    borderBottomWidth: 2
+    borderBottomWidth: 2,
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlignVertical: "bottom"
   }
 });

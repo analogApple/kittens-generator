@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, Button } from "react-native";
 import { withNavigation } from "react-navigation";
+import CacheImage from "./CacheImage";
 class Card extends React.Component {
   constructor(props) {
     super(props);
@@ -8,9 +9,9 @@ class Card extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image
+        <CacheImage
           style={{ width: 200, height: 200, marginTop: 20 }}
-          source={{ uri: this.props.uri }}
+          uri={this.props.uri}
         />
         <Text
           style={styles.name}
