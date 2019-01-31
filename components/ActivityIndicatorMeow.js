@@ -6,11 +6,24 @@ class ActivityIndicatorMoew extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      repeat: true
+      repeat: true,
+      loadingTakesTooLong: ""
     };
   }
 
   componentDidMount = () => {
+    setTimeout(() => {
+      let state = this.state;
+      state.loadingTakesTooLong = " Woah! Caching really takes some time";
+      this.setState(state);
+    }, 2000);
+
+    setTimeout(() => {
+      let state = this.state;
+      state.loadingTakesTooLong = "Never tought it can take so long! Really";
+      this.setState(state);
+    }, 10000);
+
     this.interval = setInterval(this.blink, 10);
   };
 
@@ -31,6 +44,7 @@ class ActivityIndicatorMoew extends React.Component {
         ) : (
           <Text style={funkyColors()}>MEOW</Text>
         )}
+        <Text style={{ color: "white" }}>{this.state.loadingTakesTooLong}</Text>
       </View>
     );
   }

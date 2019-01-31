@@ -70,6 +70,9 @@ export default (Styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     textAlignVertical: "bottom"
+  },
+  none: {
+    height: 60
   }
 }));
 
@@ -90,6 +93,7 @@ funkyColors = () => {
   let style = {
     color: colors[i],
     width: width,
+    height: 60,
     textAlign: "center"
   };
   return style;
